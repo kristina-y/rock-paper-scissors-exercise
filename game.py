@@ -7,22 +7,47 @@ print("-------------------")
 
 # asking the user for input
 
-x = input("Please choose either 'rock', 'paper', or 'scissors':")
+user_choice = input("Please choose either 'rock', 'paper', or 'scissors':")
 
-print(x)
 
 # regular print
-print("You chose: ", x)
+# print("You chose:", user_choice)
 
 # String concatination
-print("You chose: " + x)
+#print("You chose: " + user_choice)
 
 #String interpolation / format string usage
-print(f"You chose: {x}")
+print(f"You chose: {user_choice}")
 
-exit()
+options = ["rock", "paper", "scissors"]
+# Validate the user selection
+if user_choice in options:
+    pass
+else:
+# stop the program if the user choice is invalid
+    print("User choice is not valid. Exiting program")
+    exit()
 
-#You chose: 'rock'
+# computer's choice:
+
+#computer_choice = "paper"
+
+# Computer Choice Method 1
+#import random
+#computer_choice = ['rock', 'paper', 'scissors']
+
+# Computer Choice Method 2
+computer_choice = random.choice(options)
+
+print(f"The computer chose: {computer_choice}")
+
+
+
+
+# identifying who won
+
+if user_choice == computer_choice
+
 #The computer chose: 'paper'
 #-------------------
 #Oh, the computer won. It's ok.
