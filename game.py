@@ -34,8 +34,6 @@ computer_choice = random.choice(options)
 
 print(f"The computer chose: {computer_choice}")
 
-
-
 # Identifying who won
 # If statements were adapted from Professor Rossetti's slack message
 
@@ -63,5 +61,5 @@ elif user_choice == "scissors":
 else:
     print("SOMETHING IS WRONG.")
 
-
+# Closing message
 print("Thank you for playing. Please play again!")

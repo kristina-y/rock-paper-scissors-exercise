@@ -16,7 +16,7 @@ Fork this [remote repository](https://github.com/kristina-y/rock-paper-scissors-
 Then navigate there from the command line (subsequent commands assume you are running them from the local repository's root directory):
 
 ```sh
-cd my-first-python-app
+cd rock-paper-scissors-exercise
 ```
 
 Use Anaconda to create and activate a new virtual environment, perhaps called "game-env":
@@ -38,7 +38,12 @@ pip install -r requirements.txt
 
 In in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify your desired username:
 
-    USER_NAME="John Snow"
+```sh
+touch .env
+echo USER_NAME="John Snow" >> .env
+```
+
+Note that instead of "John Snow", you may enter your preferred user name. You may also enter this into 
 
 > NOTE: the ".env" file is usually the place for passing configuration options and secret credentials, so as a best practice we don't upload this file to version control (which is accomplished via a corresponding entry in the [.gitignore](/.gitignore) file)
 
@@ -47,7 +52,7 @@ In in the root directory of your local repository, create a new file called ".en
 Run the game script:
 
 ```py
-python app/my_game.py
+python game.py
 ```
 
 > NOTE: if you see an error like "ModuleNotFoundError: No module named 'game_utils'", it's because the "game_utils" package isn't installed, so run the `pip` command above to install that package
