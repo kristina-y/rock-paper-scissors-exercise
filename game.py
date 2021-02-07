@@ -1,26 +1,27 @@
 #game.py
 
+import os
+import random
 
+# Getting the load_dotenv() function and then invoking it
+# The following two lines of code came from Professor Rossetti's slack message:
+from dotenv import load_dotenv
+load_dotenv()
+
+USER_NAME = os.getenv("USER_NAME", default = "Player One")
+
+# Print welcome message
 print("-------------------")
-print("Welcome 'Player One' to my Rock-Paper-Scissors game...")
+print(f"Welcome {USER_NAME} to my Rock-Paper-Scissors game!")
 print("-------------------")
 
-# asking the user for input
+# Asking the user for input
 
 user_choice = input("Please choose either 'rock', 'paper', or 'scissors':")
-
-
-# regular print
-# print("You chose:", user_choice)
-
-# String concatination
-#print("You chose: " + user_choice)
-
-#String interpolation / format string usage
 print(f"You chose: {user_choice}")
 
-options = ["rock", "paper", "scissors"]
 # Validate the user selection
+options = ["rock", "paper", "scissors"]
 if user_choice in options:
     pass
 else:
@@ -28,53 +29,39 @@ else:
     print("User choice is not valid. Exiting program")
     exit()
 
-# computer's choice:
-
-#computer_choice = "paper"
-
-# Computer Choice Method 1
-#import random
-#computer_choice = ['rock', 'paper', 'scissors']
-
-# Computer Choice Method 2
-import random
+# Computer's choice:
 computer_choice = random.choice(options)
 
 print(f"The computer chose: {computer_choice}")
 
 
 
-
-# identifying who won
+# Identifying who won
+# If statements were adapted from Professor Rossetti's slack message
 
 if user_choice == "rock":
     if computer_choice == "rock":
-        print("Oh, it's a tie.")
+        print("It's a tie.")
     elif computer_choice == "paper":
-        print("Oh, the computer won. It's ok.")
+        print("The computer won. Better luck next time!")
     elif computer_choice == "scissors":
-        print("Oh, you won! Nice job.")
+        print("You won! Congrats.")
 elif user_choice == "paper":
     if computer_choice == "rock":
-        print("Oh, you won! Nice job.")
+        print("You won! Congrats.")
     elif computer_choice == "paper":
-        print("Oh, it's a tie.")
+        print("It's a tie.")
     elif computer_choice == "scissors":
-        print("Oh, the computer won. It's ok.")
+        print("The computer won. Better luck next time!")
 elif user_choice == "scissors":
     if computer_choice == "rock":
-        print("Oh, the computer won. It's ok.")
+        print("The computer won. Better luck next time!")
     elif computer_choice == "paper":
-        print("Oh, you won! Nice job.")
+        print("You won! Congratss.")
     elif computer_choice == "scissors":
-        print("Oh, it's a tie.")
+        print("It's a tie.")
 else:
-    print("OOPS SOMETHING WENT WRONG.")
+    print("SOMETHING IS WRONG.")
 
-#The computer chose: 'paper'
-#-------------------
-#Oh, the computer won. It's ok.
-#-------------------
-#Thanks for playing. Please play again!
 
-#print("Rock, Paper, Scissors, Shoot!")
+print("Thank you for playing. Please play again!")
